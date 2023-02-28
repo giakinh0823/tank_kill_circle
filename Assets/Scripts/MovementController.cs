@@ -14,11 +14,11 @@ public class MovementController : MonoBehaviour
     {
 
         xDirection = Input.GetAxisRaw("Horizontal");
-        if (xDirection == -1 && angel < 90)
+        if (xDirection == -1)
         {
             angel += 1;
         }
-        else if (xDirection == 1 && angel > -90)
+        else if (xDirection == 1)
         {
             angel -= 1;
         }
