@@ -22,13 +22,13 @@ public class SaveData : MonoBehaviour
         File.WriteAllLines(path,
                circles.Select(item => item.transform.position.x + "," +
                item.transform.position.y + "," +
+               item.GetComponent<CircleController>().health + "," +
                item.GetComponent<Renderer>().material.color.ToString()));
 
     }
 
     public void OnButtonClick()
     {
-        Debug.Log("Button clicked!");
         Save(SpawnCircle.circles);
     }
 }

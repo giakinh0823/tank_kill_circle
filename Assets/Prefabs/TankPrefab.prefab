@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8361556979040998628}
   - component: {fileID: 8361556979040998629}
-  - component: {fileID: 8361556979040998627}
-  - component: {fileID: 8361556979040998626}
   - component: {fileID: 8361556979040998625}
   - component: {fileID: 1609041628322913401}
+  - component: {fileID: 547912111527959368}
   m_Layer: 3
   m_Name: TankPrefab
   m_TagString: Player
@@ -89,33 +88,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &8361556979040998627
-BoxCollider2D:
+--- !u!114 &8361556979040998625
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8361556979040998630}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1.1145161}
-    newSize: {x: 1, y: 1.1145161}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1.1145161}
-  m_EdgeRadius: 0
---- !u!50 &8361556979040998626
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cef75178a24729a44b76342af5e5571f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  bulletPrefab: {fileID: 0}
+--- !u!114 &1609041628322913401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8361556979040998630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c256883f95af114b844bc9e4494e1be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8149475753250073262, guid: 33842509ce95aa740acf9ad419eead33, type: 3}
+  bulletPoint: {fileID: 8789126614039973574}
+  bulletSpeed: 10
+  fireRate: 0.5
+--- !u!50 &547912111527959368
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -136,35 +139,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8361556979040998625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8361556979040998630}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cef75178a24729a44b76342af5e5571f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotateSpeed: 5
---- !u!114 &1609041628322913401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8361556979040998630}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c256883f95af114b844bc9e4494e1be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 8149475753250073262, guid: 33842509ce95aa740acf9ad419eead33, type: 3}
-  bulletPoint: {fileID: 8789126614039973574}
-  bulletSpeed: 10
-  fireRate: 0.5
 --- !u!1 &8789126614039973574
 GameObject:
   m_ObjectHideFlags: 0

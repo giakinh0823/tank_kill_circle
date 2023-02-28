@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    private float speed = 5f;
+    private float speed = 10f;
     public Vector2 initialDirection; // Lưu hướng ban đầu của viên đạn
     private Rigidbody2D rb;
     [SerializeField]
@@ -31,7 +31,6 @@ public class BulletController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Circle"))
         {
-            Debug.Log("trung circle");
             Instantiate(explosionPrefab, gameObject.transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

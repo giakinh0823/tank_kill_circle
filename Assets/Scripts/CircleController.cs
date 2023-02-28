@@ -4,29 +4,21 @@ using UnityEngine;
 
 public class CircleController : MonoBehaviour
 {
-    private int health = 5;
+    public int health;
     [SerializeField]
     private GameObject explosionPrefab;
-    private SpriteRenderer spriteRenderer;
-
-    private void Start()
-    {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.transform.localScale = new Vector3(health, health, 1f);
-
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            health--;
+            health = health - 1;
+            transform.localScale = new Vector3(health, health, 1f);
             if (health <= 0)
             {
                 Instantiate(explosionPrefab, gameObject.transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
-            spriteRenderer.transform.localScale = new Vector3(health, health, 1f);
         }
     }
 }

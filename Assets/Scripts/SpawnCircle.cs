@@ -34,17 +34,13 @@ public class SpawnCircle : MonoBehaviour
         spawnTimer = 0;
 
         Vector3 target = RandomTarget(Camera.main);
-        GameObject cirile = Instantiate(this.circlePrefab) as GameObject;
-        cirile.name = "circle #" + ++number;
-        cirile.transform.position = target;
-        cirile.GetComponent<Renderer>().material.color = Random.ColorHSV();
-        circles.Add(cirile);
-    }
-
-    public void Spawn(float x, float y, Color color)
-    {
-        GameObject circle = Instantiate(circlePrefab, -Camera.main.transform.position, Quaternion.identity);
-        circle.GetComponent<Renderer>().material.color = color;
+        GameObject circle = Instantiate(this.circlePrefab) as GameObject;
+        int health = Random.Range(1, 4);
+        circle.GetComponent<CircleController>().health = health;
+        circle.transform.localScale = new Vector3(health, health, 1f);
+        circle.name = "circle #" + ++number;
+        circle.transform.position = target;
+        circle.GetComponent<Renderer>().material.color = Random.ColorHSV();
         circles.Add(circle);
     }
 
